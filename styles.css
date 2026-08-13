@@ -110,7 +110,7 @@ body {
     padding: 10px 20px;
     border: none;
     border-radius: 15px;
-    background-color: #e91e63;
+    background-color: #7c3aed;
     color: white;
     font-weight: bold;
     cursor: pointer;
@@ -118,7 +118,7 @@ body {
 }
 
 #btn-favoritos:hover {
-    background-color: #c2185b;
+    background-color: #6d28d9;
 }
 
 /* ============================================================
