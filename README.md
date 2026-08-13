@@ -2,6 +2,16 @@
 
 Aplicación web que consume la **API de Rick and Morty** para explorar y buscar personajes de la serie, construida con **HTML + CSS + JavaScript (Vanilla)**, pensada para desplegar en GitHub Pages.
 
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![REST API](https://img.shields.io/badge/REST_API-00e5cc?style=for-the-badge&logo=api&logoColor=black)
+![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-222222?style=for-the-badge&logo=githubpages&logoColor=white)
+
+## Captura de pantalla 📸
+
+![Vista previa](captura.png)
+
 ## Demo en vivo 🌍
 
 👉 **Ver sitio publicado:** [https://fidelincidane.github.io/Rick-and-Morty-Explorer/](https://fidelincidane.github.io/Rick-and-Morty-Explorer/)
