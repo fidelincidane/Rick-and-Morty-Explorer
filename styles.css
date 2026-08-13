@@ -1,0 +1,306 @@
+/* ============================================================
+   ESTILOS GENERALES
+   ============================================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #141828;
+    color: #f5f5f5;
+    min-height: 100vh;
+}
+
+/* ============================================================
+   CABECERA: zona central con la card del buscador
+   ============================================================ */
+.cabecera {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    min-height: 60vh;
+    background: radial-gradient(circle at 50% 30%, #1d2740 0%, #141828 70%);
+    border-bottom: 3px solid #00e5cc;
+}
+
+/* La card donde vive el buscador */
+.buscador-card {
+    background-color: #232841;
+    border: 1px solid #3a3f55;
+    border-radius: 20px;
+    padding: 35px 30px;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 229, 204, 0.15);
+}
+
+.buscador-card h1 {
+    font-size: 1.8rem;
+    color: #00e5cc;
+}
+
+.subtitulo {
+    color: #b0b6cf;
+    font-size: 0.9rem;
+}
+
+/* ===== BUSCADOR ===== */
+#buscador {
+    width: 100%;
+    padding: 14px 20px;
+    border-radius: 25px;
+    border: 1px solid #3a3f55;
+    font-size: 1rem;
+    background-color: #1a1f33;
+    color: #f5f5f5;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+#buscador::placeholder {
+    color: #6b7290;
+}
+
+#buscador:focus {
+    border-color: #00e5cc;
+    box-shadow: 0 0 0 3px rgba(0, 229, 204, 0.3);
+}
+
+/* ===== FILTROS ===== */
+#filtros {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.filtro {
+    padding: 8px 16px;
+    border: 1px solid #3a3f55;
+    border-radius: 15px;
+    background: transparent;
+    color: #f5f5f5;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.filtro:hover {
+    border-color: #00e5cc;
+    color: #00e5cc;
+}
+
+.filtro.activo {
+    background-color: #00e5cc;
+    border-color: #00e5cc;
+    color: #0f1220;
+    font-weight: bold;
+}
+
+/* ===== BOTÓN FAVORITOS ===== */
+#btn-favoritos {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 15px;
+    background-color: #e91e63;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#btn-favoritos:hover {
+    background-color: #c2185b;
+}
+
+/* ============================================================
+   CONTENIDO PRINCIPAL
+   ============================================================ */
+.contenido {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* ===== GRID DE TARJETAS (responsivo) ===== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+/* ===== TARJETA DE PERSONAJE ===== */
+.tarjeta {
+    background-color: #232841;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: center;
+}
+
+.tarjeta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.tarjeta img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.tarjeta h3 {
+    font-size: 1.05rem;
+    color: #ffffff;
+    font-weight: bold;
+    margin: 10px 8px 4px;
+}
+
+.tarjeta p {
+    font-size: 0.85rem;
+    color: #b0b6cf;
+    margin-bottom: 10px;
+}
+
+/* ===== ESTADO (vivo / muerto / desconocido) ===== */
+.estado {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.estado.Alive {
+    background-color: #22c55e;
+    color: #0f1220;
+}
+
+.estado.Dead {
+    background-color: #ef4444;
+    color: white;
+}
+
+.estado.unknown {
+    background-color: #9ca3af;
+    color: #0f1220;
+}
+
+/* ===== CLASE PARA OCULTAR ELEMENTOS ===== */
+.oculto {
+    display: none;
+}
+
+/* ===== MENSAJE DE ESTADO (cargando / error) ===== */
+#estado {
+    color: #b0b6cf;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+#estado.error {
+    color: #ef4444;
+}
+
+/* ===== BOTÓN CARGAR MÁS ===== */
+#btn-cargar-mas {
+    padding: 12px 40px;
+    border: none;
+    border-radius: 25px;
+    background-color: #00e5cc;
+    color: #0f1220;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#btn-cargar-mas:hover {
+    background-color: #00c4af;
+}
+
+/* ============================================================
+   MODAL (detalle del personaje)
+   ============================================================ */
+.modal {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 100;
+}
+
+.modal-caja {
+    background-color: #232841;
+    border-radius: 15px;
+    max-width: 500px;
+    width: 100%;
+    padding: 25px;
+    position: relative;
+}
+
+.cerrar {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: #b0b6cf;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+#detalle img {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto 15px;
+}
+
+#detalle h2 {
+    color: #00e5cc;
+    margin-bottom: 10px;
+}
+
+#detalle p {
+    margin-bottom: 6px;
+    color: #b0b6cf;
+}
+
+/* Un modal con clase "oculto" SÍ se esconde */
+/* (2 clases juntas = más especificidad que 1 sola clase) */
+.modal.oculto {
+    display: none;
+}
+
+/* ============================================================
+   RESPONSIVO PARA MÓVIL
+   ============================================================ */
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    }
+
+    .buscador-card {
+        padding: 25px 20px;
+    }
+}

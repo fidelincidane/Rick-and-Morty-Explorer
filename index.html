@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rick and Morty Explorer</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <!-- CABECERA: título + buscador + filtros -->
+    <header class="cabecera">
+        <div class="buscador-card">
+            <h1>Rick and Morty Explorer</h1>
+            <p class="subtitulo">Encuentra a tus personajes favoritos de la serie</p>
+
+            <!-- Buscador por nombre -->
+            <input id="buscador" type="search" placeholder="Buscar personaje por nombre..." />
+
+            <!-- Filtros por estado -->
+            <div id="filtros">
+                <button class="filtro activo" data-estado="all">Todos</button>
+                <button class="filtro" data-estado="Alive">Vivos</button>
+                <button class="filtro" data-estado="Dead">Muertos</button>
+                <button class="filtro" data-estado="unknown">Desconocidos</button>
+            </div>
+
+            <!-- Ver solo favoritos -->
+            <button id="btn-favoritos">❤️ Ver favoritos</button>
+        </div>
+    </header>
+
+    <main class="contenido">
+        <!-- Aquí el JS pintará las tarjetas de personajes -->
+        <div id="grid" class="grid"></div>
+
+        <!-- Mensaje de carga o de error -->
+        <p id="estado" class="oculto"></p>
+
+        <!-- Botón de paginación -->
+        <button id="btn-cargar-mas" class="oculto">Cargar más</button>
+    </main>
+
+    <!-- MODAL: detalle del personaje -->
+    <div id="modal" class="modal oculto">
+        <div class="modal-caja">
+            <button id="btn-cerrar" class="cerrar">&times;</button>
+            <div id="detalle"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
