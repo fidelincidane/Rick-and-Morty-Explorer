@@ -150,11 +150,31 @@ body {
     cursor: pointer;
     transition: transform 0.2s, box-shadow 0.2s;
     text-align: center;
+    position: relative; /* para poder posicionar el corazón encima */
 }
 
 .tarjeta:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== CORAZÓN DE FAVORITO ===== */
+.btn-fav {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: none;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    padding: 6px 8px;
+    cursor: pointer;
+    z-index: 5;
+    transition: transform 0.2s;
+}
+
+.btn-fav:hover {
+    transform: scale(1.2);
 }
 
 .tarjeta img {
@@ -215,6 +235,39 @@ body {
 
 #estado.error {
     color: #ef4444;
+}
+
+/* ===== SPINNER DE CARGA ===== */
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid #3a3f55;
+    border-top-color: #00e5cc;
+    border-radius: 50%;
+    animation: girar 0.8s linear infinite;
+}
+
+@keyframes girar {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ===== PIE DE PÁGINA ===== */
+.pie {
+    text-align: center;
+    padding: 25px 20px;
+    color: #b0b6cf;
+    font-size: 0.9rem;
+}
+
+.pie a {
+    color: #00e5cc;
+    text-decoration: none;
+}
+
+.pie a:hover {
+    text-decoration: underline;
 }
 
 /* ===== BOTÓN CARGAR MÁS ===== */
@@ -284,6 +337,12 @@ body {
 #detalle p {
     margin-bottom: 6px;
     color: #b0b6cf;
+}
+
+/* Lista de episodios con scroll si es muy larga */
+.episodios {
+    max-height: 120px;
+    overflow-y: auto;
 }
 
 /* Un modal con clase "oculto" SÍ se esconde */
